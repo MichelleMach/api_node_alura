@@ -1,0 +1,23 @@
+{
+  "name": "project-api-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michelle da Rosa Machado",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "consign": "^0.1.6",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
