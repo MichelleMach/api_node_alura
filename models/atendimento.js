@@ -74,10 +74,41 @@ class Atendimento {
             if (erro) {
                 res.status(400).json(erro)
             } else {
-                console.log(resultados)
                 res.status(200).json(resultados)
             }
         })
+    }
+
+    altera(id, alteracoes, res) {
+
+        if (alteracoes.data) {
+            console.log(alteracoes.data)
+            alteracoes.data = alteracoes.data = moment().format('YYYY-MM-DD HH:MM:SS')
+        }
+        
+        const sql =`UPDATE Atendimentos SET ? WHERE id = ?`
+
+        conexao.query(sql, [alteracoes, id], (erro, resultados) => {
+            if (erro) {
+                res.status(400).json(erro)
+            } else {
+                res.status(200).json(resultados)
+            }
+        })
+    }
+
+    deleta(id, res) {
+
+        const sql =`DELETE * FROM Atendimentos WHERE id=?`
+
+        conexao.query(sql, (erro, resultados) => {
+            if (erro) {
+                res.status(400).json(erro)
+            } else {
+                res.status(200).json({id})
+            }
+        })
+
     }
 }
 
